@@ -1,0 +1,52 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+
+public class NewEgg {
+	public static void main(String[] args) throws IOException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\rielm\\Desktop\\Zenergy\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.newegg.com");
+		// String winHandleBefore = driver.getWindowHandle();
+		AddToWishList(driver);
+
+	}
+
+	public static void AddToWishList(WebDriver driver) {
+		//log in module must be created to run this module
+		String testSearch = "Consoles";
+		WebElement searchBar = driver.findElement(By.id("haQuickSearchBox"));
+		searchBar.click();
+		driver.findElement(By.id("haQuickSearchBox")).sendKeys("PS4 Systems" + Keys.ENTER);
+		WebElement Skyrim = driver.findElement(By.className("item-title"));
+		Skyrim.click();
+		WebElement wishlist = driver.findElement(By.id("AddToWishlist"));
+		wishlist.click();
+		WebElement username = driver.findElement(By.id("UserName"));
+		username.click();
+		//Scanner usrname = new Scanner(System.in);
+		//WebElement password = driver.findElement(By.id("UserPwd"));
+		//Scanner pword = new Scanner(System.in);
+		//WebElement submit = driver.findElement(By.id("submit"));
+		//if(username.isDisplayed()) {
+		//	password.click();
+		//}
+		//if (password.isDisplayed()) {
+		//	submit.click();
+		//}
+		System.out.println("");
+		
+	}
+
+	public static void ClickSubmit(WebDriver driver) {
+		//The javascript for Submit Order button: javascript:Biz.GlobalShopping.CheckOut.submitOrder();
+		WebElement submit = driver.findElement(By.id("submit"));
+		submit.click();
+	}
+}
