@@ -222,12 +222,11 @@ public class MainMethod {
 
 	}
 	
-	public static void compare () throws InterruptedException, IOException {
+	public static void comparetestcase () throws InterruptedException, IOException {
 		System.setProperty("webdriver.chrome.driver", "D:\\Program Files\\eclipse\\ZenergyProject\\chromedriver.exe");
 		//called action required for hovering over popup
 		Actions action = new Actions(driver);
-		//call item search to search for items
-		itemsearch();
+		
 		
 		//Scroll into the views of laptops
 		WebElement laptop = driver.findElement(By.xpath("//img[@title='HP Laptop 250 G6 (1NW57UT#ABA) Intel Core i5 7th Gen 7200U (2.50 GHz) 8 GB Memory 256 GB SSD Intel HD Graphics 620 15.6\" Windows 10 Pro 64-Bit']"));
@@ -235,14 +234,27 @@ public class MainMethod {
 		.executeScript("arguments[0].scrollIntoView(true);", laptop);
 		
 		//Clicking and comparing two items
-		WebElement compare1 = driver.findElement(By.xpath("//span[@class='form-checkbox-title']"));
-		WebElement compare2 = driver.findElement(By.xpath("//span[@class='form-checkbox']"));
+		WebElement compare1 = driver.findElement(By.xpath("//html//div[1]/div[1]/div[2]/div[1]/div[2]/label[1]/span[1]"));
+		WebElement compare2 = driver.findElement(By.xpath("//html//div[2]/div[1]/div[2]/div[1]/div[2]/label[1]/span[1]"));
 		compare1.click();
 		Thread.sleep(2000);
 		compare2.click();
 		Thread.sleep(3000);
-		WebElement we = driver.findElement(By.className("form-checkbox-title"));
-		action.moveToElement(we).moveToElement(driver.findElement(By.className("popover left popover-compare"))).click().build().perform();
+		WebElement we = driver.findElement(By.xpath("//html//div[2]/div[1]/div[2]/div[1]/div[2]/label[1]/span[1]"));
+		action.moveToElement(we).moveToElement(driver.findElement(By.xpath("//div[@class='popover-btn-area']/button[@id='gocompare']"))).click().build().perform();
+		Thread.sleep(2500);
+		
+		//Getting the current title page
+		String actTitle = driver.getTitle();
+		String expTitle = "Computer Parts, PC Components, Laptop Computers, LED LCD TV, Digital Cameras and more - Newegg.com";
+		
+		//Confirming that the title page is correct and displaying a message for verification 
+		if(actTitle.equalsIgnoreCase(expTitle)) {
+			System.out.println("Title matched");
+		}
+		else {
+			System.out.println("Title didn't match");
+		}
 }
 	public static void searchtestcase () throws InterruptedException, IOException {
 		//opening new egg and item search 
@@ -278,7 +290,6 @@ public class MainMethod {
 		action.click(seller).build().perform();
 		
 		//Getting the current title page
-		driver.getTitle().equals("EK Water Blocks Store - Newegg.com");
 		String actTitle = driver.getTitle();
 		String expTitle = "EK Water Blocks Store - Newegg.com";
 		
