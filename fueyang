@@ -213,12 +213,11 @@ public class MainMethod {
 		button.click();
 		//Waiting for page to load
 		Thread.sleep(2000);
-		//Execute autoit script to close popup
-		//for the file path, you may want to change it to your own personal file path
-		Runtime.getRuntime().exec("D:\\Fue\\Documents\\Classes\\ISM 435\\move.exe");
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Fue\\Documents\\Classes\\ISM 435\\move.exe");
-		Thread.sleep(3000);
+		//Closes warranty popups 
+		driver.findElement(By.xpath("//html//div[@id='custom']//button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@class='centerPopup is-current is-top']//div[@class='centerPopup-body']//a[@href='javascript:;']")).click();
+		Thread.sleep(2000);
 
 	}
 	
