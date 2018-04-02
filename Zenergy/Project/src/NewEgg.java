@@ -25,6 +25,12 @@ public class NewEgg {
 			home.Module_GoToNewegg();
 		Searchbar search = new Searchbar(driver);
 			search.Module_ItemSearch("laptop");
+		
+		//TC_PromoCode
+		/*HomePage home = new HomePage(driver);
+			home.Module_GoToNewegg();
+		LoginPage log = new LoginPage(driver);
+			log.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");*/
 	}
 }
 
