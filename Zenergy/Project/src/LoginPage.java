@@ -24,27 +24,51 @@ public class LoginPage {
 	}
 
 	// Module_Signup: Creates an account for the user.
-	public void Module_Signup(String Login, String Pwd) {
-		WebElement CreateButton = driver.findElement(By.xpath("//input[@value='Create new account']"));
-		CreateButton.click();
+	public void Module_SignupUserName(String Login) throws InterruptedException {
+		//Boolean isPresent = driver.findElement(By.xpath("//input[@value='Create new account']")).size() > 0;
+		//This checks to make sure the promo code exist on page, if it doesnt it trys to login.
+		if (driver.findElement(By.className("promo-code-wrap")) != null) {
+			WebElement EmailField = driver.findElement(By.id("LoginName"));
+			EmailField.click();
+			EmailField.clear();
+			EmailField.sendKeys(Login);
+			EmailField.sendKeys(Keys.ENTER);
+			Thread.sleep(3000);
+			// There are two of these classes, it finds the second at index 1 and checks the
+			// text there.
+			if (driver.findElements(By.className("promo-code-title")).get(1).getText()
+					.contains("Thank you for subscribing! Your request will be processed within the next 24 hours.")) {
+				System.out.println("You have been signed up.");
+			} else {
+				System.out.println("Signup failed.");
+			}
+		} else {
+			WebElement CreateButton = driver.findElement(By.xpath("//input[@value='Create new account']"));
+			CreateButton.click();
+			WebElement EmailField = driver.findElement(By.id("LoginName"));
+			WebElement EmailVField = driver.findElement(By.id("LoginName1"));
+			EmailField.click();
+			EmailField.clear();
+			EmailField.sendKeys(Login);
+			// If statement that makes sure email is an email
+			if (Login.contains("@") && Login.contains(".")) {
+				System.out.println("Email is good.");
+			} else {
+				System.out.println("Bad email.");
+			}
+			EmailVField.click();
+			EmailVField.clear();
+			EmailVField.sendKeys(Login);
+		}
+	}
+
+	public void Module_SignupPwd(String Pwd) throws InterruptedException {
+
 		// These find the input elements to login with.
-		WebElement EmailField = driver.findElement(By.id("LoginName"));
-		WebElement EmailVField = driver.findElement(By.id("LoginName1"));
 		WebElement PassworField = driver.findElement(By.id("Password"));
 		WebElement PasswordVField = driver.findElement(By.id("Password1"));
 		WebElement Newsletter = driver.findElement(By.id("newsletter"));
-		EmailField.click();
-		EmailField.clear();
-		EmailField.sendKeys(Login);
-		// If statement that makes sure email is an email
-		if (Login.contains("@") && Login.contains(".")) {
-			System.out.println("Email is good.");
-		} else {
-			System.out.println("Bad email.");
-		}
-		EmailVField.click();
-		EmailVField.clear();
-		EmailVField.sendKeys(Login);
+
 		// Password Creation
 		PassworField.click();
 		PassworField.clear();
@@ -132,6 +156,7 @@ public class LoginPage {
 		// end of Password Verification
 		Newsletter.click();
 		WebElement CreateAccount = driver.findElement(By.className("atnSecondary"));
-		CreateAccount.click();
+		// CreateAccount.click();
 	}
+
 }
