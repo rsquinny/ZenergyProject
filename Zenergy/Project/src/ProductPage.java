@@ -12,6 +12,7 @@ public class ProductPage {
 	public ProductPage(WebDriver d) {
 		this.driver = d;
 	}
+	
 
 	// Module_Cart
 	public void Module_Cart() throws InterruptedException, AWTException, IOException {
@@ -49,19 +50,25 @@ public class ProductPage {
 
 	// Module_AddToWishlist
 	public void Module_AddToWishList() {
-		// log in module must be created to run this module
-		WebElement searchBar = driver.findElement(By.id("haQuickSearchBox"));
-		searchBar.click();
-		driver.findElement(By.id("haQuickSearchBox")).sendKeys("PS4 Systems" + Keys.ENTER);
-		WebElement Skyrim = driver.findElement(By.className("item-title"));
-		Skyrim.click();
-		WebElement wishlist = driver.findElement(By.id("AddToWishlist"));
-		wishlist.click();
-		WebElement username = driver.findElement(By.id("UserName"));
-		username.click();
-
-		System.out.println("");
-
+		//adds an item to the wishlist
+				WebElement searchBar = driver.findElement(By.id("haQuickSearchBox"));
+				searchBar.click();
+				driver.findElement(By.id("haQuickSearchBox")).sendKeys("PS4 Systems" + Keys.ENTER);
+				
+				WebElement Skyrim = driver.findElement(By.xpath("//*[@id=\"bodyArea\"]/section/div/div/div[2]/div/div/div/div[2]/div[1]/div[2]/div[2]/div[27]/div/a"));
+				Skyrim.click();
+				WebElement wishlist = driver.findElement(By.id("AddToWishlist"));
+				wishlist.click();
+				Thread.sleep(2000); 
+				Actions act = new Actions(driver);
+				act.moveToElement(driver.findElement(By.xpath("//span[@class='form-checkbox-title'][contains(text(),'Wishlist1')]"))).click().build().perform();
+				driver.findElement(By.xpath("//button[@type='button'][contains(text(),'ADD')]")).click();
+				Thread.sleep(2000); 
+				
+				driver.findElement(By.xpath("//button[@type='button'][contains(text(),'Continue Shopping')]")).click();
+				
+				//if statement maybe in future?
+				System.out.println("Item added to wishlist");
 	}
 
 	// Module_ClickSubmit
