@@ -1,0 +1,5 @@
+public static void ClickSubmit(WebDriver driver) {
+		//The javascript for Submit Order button: javascript:Biz.GlobalShopping.CheckOut.submitOrder();
+		WebElement submit = driver.findElement(By.id("submit"));
+		submit.click();
+	}
