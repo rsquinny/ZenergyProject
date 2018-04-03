@@ -51,10 +51,11 @@ public class ProductPage {
 	// Module_AddToWishlist
 	public void Module_AddToWishList() {
 		//adds an item to the wishlist
-				WebElement searchBar = driver.findElement(By.id("haQuickSearchBox"));
+				/*WebElement searchBar = driver.findElement(By.id("haQuickSearchBox"));
 				searchBar.click();
-				driver.findElement(By.id("haQuickSearchBox")).sendKeys("PS4 Systems" + Keys.ENTER);
+				driver.findElement(By.id("haQuickSearchBox")).sendKeys("PS4 Systems" + Keys.ENTER);*/
 				
+		//This could be its own module since it selects an item and isnt actually an add to Wishlist property
 				WebElement Skyrim = driver.findElement(By.xpath("//*[@id=\"bodyArea\"]/section/div/div/div[2]/div/div/div/div[2]/div[1]/div[2]/div[2]/div[27]/div/a"));
 				Skyrim.click();
 				WebElement wishlist = driver.findElement(By.id("AddToWishlist"));
