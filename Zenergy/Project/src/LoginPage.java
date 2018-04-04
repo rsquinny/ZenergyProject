@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,26 +24,23 @@ public class LoginPage {
 		PasswordField.sendKeys(Keys.ENTER);
 	}
 
-	// Module_Signup: Creates an account for the user.
-	public void Module_SignupUserName(String Login) throws InterruptedException {
-		//Boolean isPresent = driver.findElement(By.xpath("//input[@value='Create new account']")).size() > 0;
-		//This checks to make sure the promo code exist on page, if it doesnt it trys to login.
-		if (driver.findElement(By.className("promo-code-wrap")) != null) {
+	// Module_SignupUserName: Finds the LoginName field and inputs the Login information
+	public void Module_SignupUserName(String Login) throws InterruptedException, NoSuchElementException {
+		//Tries to see if you the promo code box is present. If not inputs Login info to LoginName
+		try {
 			WebElement EmailField = driver.findElement(By.id("LoginName"));
 			EmailField.click();
 			EmailField.clear();
 			EmailField.sendKeys(Login);
 			EmailField.sendKeys(Keys.ENTER);
-			Thread.sleep(3000);
-			// There are two of these classes, it finds the second at index 1 and checks the
-			// text there.
+			// There are two of these classes, it finds the second at index 1 and checks the text there.
 			if (driver.findElements(By.className("promo-code-title")).get(1).getText()
 					.contains("Thank you for subscribing! Your request will be processed within the next 24 hours.")) {
 				System.out.println("You have been signed up.");
 			} else {
 				System.out.println("Signup failed.");
 			}
-		} else {
+		} catch(Exception E) {
 			WebElement CreateButton = driver.findElement(By.xpath("//input[@value='Create new account']"));
 			CreateButton.click();
 			WebElement EmailField = driver.findElement(By.id("LoginName"));
@@ -61,23 +59,25 @@ public class LoginPage {
 			EmailVField.sendKeys(Login);
 		}
 	}
-
+	
+	//Module_SignupPwd: Registers the users password with their new account
 	public void Module_SignupPwd(String Pwd) throws InterruptedException {
-
 		// These find the input elements to login with.
 		WebElement PassworField = driver.findElement(By.id("Password"));
 		WebElement PasswordVField = driver.findElement(By.id("Password1"));
 		WebElement Newsletter = driver.findElement(By.id("newsletter"));
-
 		// Password Creation
 		PassworField.click();
 		PassworField.clear();
 		PasswordVField.click();
 		PasswordVField.clear();
 		/*
-		 * 1. Eight (8) to thirty (30) characters long 2. Three of the four below: - Use
-		 * upper case letters - Use lower case letters - Use at least one number - Use
-		 * special characters
+		   1. Eight (8) to thirty (30) characters long  
+		   2. Three of the four below:
+		   - Use upper case letters 
+		   - Use lower case letters 
+		   - Use at least one number 
+		   - Use special characters
 		 */
 		int upper = 0;
 		int lower = 0;
