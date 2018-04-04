@@ -48,6 +48,11 @@ public class SearchPage {
 			System.out.println("Title didn't match");
 		}
 	}
+	
+	//Module_ClickItem: This clicks the first item on a search page
+	public void Module_ClickItem() {
+		WebElement item = driver.findElement(By.xpath("//*[@id=\"bodyArea\"]/section/div/div/div[2]/div/div/div/div[2]/div[1]/div[2]/div[2]/div[27]/div/a"));
+		item.click();
 
 	// Module_FeaturedSellers
 	public void Module_FeaturedSellers() throws InterruptedException, IOException {
