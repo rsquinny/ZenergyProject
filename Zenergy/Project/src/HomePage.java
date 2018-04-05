@@ -11,6 +11,9 @@ public class HomePage {
 
 	// Module_GoToNewegg: Directs browser to Newegg home page.
 	public void Module_GoToNewegg() {
+		
+		//Maximizes and goes to newegg.com
+	   	driver.manage().window().maximize();
 		driver.get("https://www.newegg.com");
 		// Verifies that the title works
 		if (driver.getTitle().equals("Computer Parts, Laptops, Electronics, and More - Newegg.com")) {
