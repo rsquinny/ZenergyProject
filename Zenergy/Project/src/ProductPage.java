@@ -41,7 +41,7 @@ public class ProductPage {
 	public void Module_Checkout() throws InterruptedException, IOException, AWTException {
 		// Call modules to open new egg and login, as well as carting and item search
 		// Clicking checkout
-		driver.findElement(By.className("btn btn-primary")).click();
+		driver.findElement(By.xpath("//html//button[2]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.className("button button-primary has-icon-right")).click();
 		Thread.sleep(2000);
