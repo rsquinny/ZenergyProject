@@ -39,9 +39,7 @@ public class ProductPage {
 			Thread.sleep(2000);
 		}
 		catch (Exception e) {
-			if (driver.findElement(By.xpath("//html//button[2]")).isDisplayed()) {
-				driver.findElement(By.xpath("//html//button[2]")).click();
-			}
+			
 		}
 			
 
@@ -56,15 +54,14 @@ public class ProductPage {
 			if (driver.findElement(By.xpath("//html//button[2]")).isDisplayed()) {
 				driver.findElement(By.xpath("//html//button[2]")).click();
 			}
+			Thread.sleep(2000);
 			if (driver.findElement(By.xpath("//a[@class='button button-primary has-icon-right']")).isDisplayed()) {
 				driver.findElement(By.xpath("//a[@class='button button-primary has-icon-right']")).click();
 			}
 			Thread.sleep(2000);
 		}
 		catch (Exception e) {
-			if (driver.findElement(By.xpath("//a[@class='button button-primary has-icon-right']")).isDisplayed()) {
-				driver.findElement(By.xpath("//a[@class='button button-primary has-icon-right']")).click();
-			}
+	
 		}
 		Thread.sleep(2000);
 	}
