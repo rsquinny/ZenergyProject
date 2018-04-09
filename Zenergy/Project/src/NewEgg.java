@@ -76,6 +76,11 @@ public class NewEgg {
 			prod.Module_Cart();
 			prod.Module_Checkout();
 		*/
+		//TC_Sort --- complete
+		/*
+		home.Module_GoToNewegg();
+		bar.Module_ItemSearch("PS4 Systems");
+		search.Module_SortByLowest();*/
 	}
 }
 
