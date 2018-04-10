@@ -30,7 +30,7 @@ public class NewEgg {
 		//TC_Search --- complete, could add more searches just to make it special.
 		/*
 			home.Module_GoToNewegg();
-			search.Module_ItemSearch("laptop");*/
+			bar.Module_ItemSearch("laptop");*/
 		
 		//TC_AddToWishlist --- completed
 		/*
@@ -65,17 +65,15 @@ public class NewEgg {
 			prod.Module_Cart();
 			prod.Module_Checkout();
 			log.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
-		*/
-		//TC_Checkout as guest --- complete
-		/*
-			home.Module_GoToNewegg();
-			home.Module_LoginButton();
-			log.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");
-			log.Module_SignupPwd("Zenergy20");
+			home.Module_HomeButton();
+			home.Module_Logout();
 			bar.Module_ItemSearch("laptop");
 			prod.Module_Cart();
 			prod.Module_Checkout();
+			prod.Module_CheckoutasGuest();
+
 		*/
+	
 		//TC_Sort --- complete
 		/*
 		home.Module_GoToNewegg();
