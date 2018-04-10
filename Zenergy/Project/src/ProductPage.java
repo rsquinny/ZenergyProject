@@ -33,10 +33,6 @@ public class ProductPage {
 				driver.findElement(By.xpath("//html//div[@id='custom']//button[1]")).click();
 			}
 			Thread.sleep(2000);
-			if (driver.findElement(By.xpath("//div[@class='centerPopup is-current is-top']//div[@class='centerPopup-body']//a[@href='javascript:;']")).isDisplayed()) {
-				driver.findElement(By.xpath("//div[@class='centerPopup is-current is-top']//div[@class='centerPopup-body']//a[@href='javascript:;']")).click();
-			}
-			Thread.sleep(2000);
 		}
 		catch (Exception e) {
 			
@@ -53,10 +49,6 @@ public class ProductPage {
 		try {
 			if (driver.findElement(By.xpath("//html//button[2]")).isDisplayed()) {
 				driver.findElement(By.xpath("//html//button[2]")).click();
-			}
-			Thread.sleep(2000);
-			if (driver.findElement(By.xpath("//a[@class='button button-primary has-icon-right']")).isDisplayed()) {
-				driver.findElement(By.xpath("//a[@class='button button-primary has-icon-right']")).click();
 			}
 			Thread.sleep(2000);
 		}
@@ -92,5 +84,12 @@ public class ProductPage {
 		// javascript:Biz.GlobalShopping.CheckOut.submitOrder();
 		WebElement submit = driver.findElement(By.id("submit"));
 		submit.click();
+	}
+	
+	//Module_CheckoutasGuest: clicks on continue as a guest at the end of checkout
+	public void Module_CheckoutasGuest() {
+		
+		WebElement guest = driver.findElement(By.xpath("//form[@id='guestCheckOutForm']//a[@class='atnSecondary']"));
+		guest.click();
 	}
 }
