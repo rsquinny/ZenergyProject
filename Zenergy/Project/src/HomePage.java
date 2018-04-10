@@ -28,5 +28,19 @@ public class HomePage {
 		WebElement LoginButton = driver.findElement(By.id("usaSite"));
 		LoginButton.click();
 	}
-
+	//Module_Logout: Module logs user out
+	public void Module_Logout() throws InterruptedException {
+		//action to click and move to logout
+		Actions action = new Actions(driver);
+		driver.findElement(By.xpath("//ins[contains(text(),'My Account')]")).click();
+		WebElement myaccount = driver.findElement(By.xpath("//ins[contains(text(),'My Account')]"));
+		action.moveToElement(myaccount).perform();
+		Thread.sleep(1000);
+		action.moveToElement(driver.findElement(By.xpath("//a[@href='https://secure.newegg.com/NewMyAccount/AccountLogout.aspx']"))).click().build().perform();
+	
+	}
+	//Module_HomeButton: Module clicks on the home button in any page
+	public void Module_HomeButton () {
+		driver.findElement(By.xpath("//img[@src='//c1.neweggimages.com/WebResource/Themes/2005/Nest/logo_424x210.png']")).click();
+	}
 }
