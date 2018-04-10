@@ -2,6 +2,8 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.awt.AWTException;
+import org.apache.log4j.xml.DOMConfigurator;
+
 
 
 
@@ -12,12 +14,14 @@ public class NewEgg {
 	static HomePage home = new HomePage(driver);
 	static Searchbar bar = new Searchbar(driver);
 	static SearchPage search = new SearchPage(driver);
-	static LoginPage log = new LoginPage(driver);
+	static LoginPage login = new LoginPage(driver);
 	static ProductPage prod = new ProductPage(driver);
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-	
+		//Provide log4j configuration setting
+		DOMConfigurator.configure("log4j.xml");
+
 				//Test Account: "LeatherlikeScaling@maildrop.cc", "Zenergy20"
 		
 		//TC_Register --- complete
