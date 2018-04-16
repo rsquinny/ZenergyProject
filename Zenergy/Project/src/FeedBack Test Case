@@ -1,0 +1,9 @@
+	//TC_FeedBack
+		home.Module_GoToNewegg();
+		WebElement feedback = driver.findElement(By.id("guest_feedback_from_newegg"));
+		feedback.click();
+		//driver.switchTo().frame(1);
+		WebElement select = driver.findElement(By.className("form-select is-wide has-other-input"));
+		select.click();
+	    List<WebElement> options = select.findElements(By.tagName("option"));
+	   
