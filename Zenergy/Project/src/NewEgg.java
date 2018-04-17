@@ -1,11 +1,16 @@
-import java.io.IOException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import java.awt.AWTException;
+import java.io.IOException;
+import java.util.List;
+
 import org.apache.log4j.xml.DOMConfigurator;
-
-
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class NewEgg {
@@ -16,73 +21,176 @@ public class NewEgg {
 	static SearchPage search = new SearchPage(driver);
 	static LoginPage login = new LoginPage(driver);
 	static ProductPage prod = new ProductPage(driver);
-	
-	public static void main(String[] args) throws IOException, InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		//Provide log4j configuration setting
-		DOMConfigurator.configure("log4j.xml");
 
-				//Test Account: "LeatherlikeScaling@maildrop.cc", "Zenergy20"
+	public static void main(String[] args) throws IOException, InterruptedException, AWTException {
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		//provide log4j configuration settings
+		DOMConfigurator.configure("log4j.xml");
 		
 		//TC_Register --- complete
-		/*
-			home.Module_GoToNewegg();
-			home.Module_LoginButton();
-			log.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");
-			log.Module_SignupPwd("Zenergy20");*/
-			
-		//TC_Search --- complete, could add more searches just to make it special.
-		/*
-			home.Module_GoToNewegg();
-			bar.Module_ItemSearch("laptop");*/
-		
-		//TC_AddToWishlist --- completed
-		/*
-			home.Module_GoToNewegg();
-			home.Module_LoginButton();
-			log.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
-			home.Module_GoToNewegg();
-			bar.Module_ItemSearch("PS4 Systems");
-			search.Module_ClickItem();
-			prod.Module_AddToWishList();*/
-			
-		//TC_PromoCode --- complete
-		/*
-			home.Module_GoToNewegg();
-			log.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");*/
-		
-		//TC_Compare --- complete
-		/*
-			home.Module_GoToNewegg();
-			bar.Module_ItemSearch("laptop");
-			search.Module_Compare();
-		*/
-		//TC_FeaturedSellers --- complete
-		/*
-			home.Module_GoToNewegg();
-			search.Module_FeaturedSellers();
-		*/
-		//TC_Checkout as user --- complete
-		/*
-			home.Module_GoToNewegg();
-			bar.Module_ItemSearch("laptop");
-			prod.Module_Cart();
-			prod.Module_Checkout();
-			log.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
-			home.Module_HomeButton();
-			home.Module_Logout();
-			bar.Module_ItemSearch("laptop");
-			prod.Module_Cart();
-			prod.Module_Checkout();
-			prod.Module_CheckoutasGuest();
+				/*
+					Log.startTestCase("Selenium_Test_Register");
 
-		*/
-	
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					home.Module_LoginButton();
+					Log.info("Module_LoginButton is successful");
+					login.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");
+					Log.info("Module_SignupUserName is successful");
+					login.Module_SignupPwd("Zenergy20");
+					Log.info("Module_SignupPwd is successful");
+					
+					Log.endTestCase("Selenium_Test_Register");		
+				*/	
+		//TC_Search --- complete, could add more searches just to make it special.
+				/*
+					Log.startTestCase("Selenium_Test_Search");
+					
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					bar.Module_ItemSearch("laptop");
+					Log.info("Module_ItemSearch is successful");
+					
+					Log.endTestCase("Selenium_Test_Search");
+				*/
+		//TC_AddToWishlist --- completed
+				/*
+				 	Log.startTestCase("Selenium_Test_AddToWishlist");
+				 	
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					home.Module_LoginButton();
+					Log.info("Module_LoginButton is successful");
+					login.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
+					Log.info("Module_SignupUserName is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
+					bar.Module_ItemSearch("PS4 Systems");
+					Log.info("Module_ItemSearch is successful");
+					search.Module_ClickItem();
+					Log.info("Module_ClickItem is successful");
+					prod.Module_AddToWishList();
+					Log.info("Module_AddToWishList is successful");
+					
+					Log.endTestCase("Selenium_Test_AddToWishlist");
+				*/
+					
+		//TC_PromoCode --- complete
+				/*
+				 	Log.startTestCase("Selenium_Test_PromoCode");
+				 	
+					home.Module_GoToNewegg();
+					Log.info("Module_Go_ToNewegg is successful");
+					login.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");
+					Log.info("Module_SignupUserName is successful");
+					
+					Log.endTestCase("Selenium_Test_PromoCode");
+				*/
+		//TC_Compare --- complete
+				/*
+				 	Log.startTestCase("Selenium_Test_Compare");
+		
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					bar.Module_ItemSearch("laptop");
+					Log.info("Module_ItemSearch is successful");
+					search.Module_Compare();
+					Log.info("Module_Compare is successful");
+					
+					Log.endTestCase("Selenium_Test_Compare");
+		 		*/
+		//TC_FeaturedSellers --- complete
+				/*
+				 	Log.startTestCase("Selenium_Test_FeaturedSellers");
+				 	
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					search.Module_FeaturedSellers();
+					Log.info("Module_FeaturedSellers is successful");
+					
+					Log.endTestCase("Selenium_Test_FeaturedSellers");
+		 		*/	
+		//TC_Checkout as user and guest --- complete
+				/*
+					Log.startTestCase("Selenium_Test_Checkout");
+					
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					bar.Module_ItemSearch("laptop");
+					Log.info("Module_ItemSearch is successful");
+					prod.Module_Cart();
+					Log.info("Module_Cart is successful");
+					prod.Module_Checkout();
+					Log.info("Module_Checkout is successful");
+					login.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
+					Log.info("Module_InputLogin is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
+					home.Module_Logout();
+					Log.info("Module_Logout is successful");
+					bar.Module_ItemSearch("laptop");
+					Log.info("Module_ItemSearch is successful");
+					prod.Module_Cart();
+					Log.info("Module_Cart is successful");
+					prod.Module_Checkout();
+					Log.info("Module_Checkout is successful");
+					prod.Module_CheckoutasGuest();
+					Log.info("Module_CheckoutasGuest is successful");
+					
+					Log.endTestCase("Selenium_Test_Checkout");
+				*/
+				
 		//TC_Sort --- complete
-		/*
-		home.Module_GoToNewegg();
-		bar.Module_ItemSearch("PS4 Systems");
-		search.Module_SortByLowest();*/
+				/*
+				 	Log.startTestCase("Selenium_Test_Sort");
+				 	
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					bar.Module_ItemSearch("PS4 Systems");
+					Log.info("Module_ItemSearch is successful");
+					search.Module_SortByLowest();
+					Log.info("Module_SortByLowest is successful");
+					
+					Log.endTestCase("Selenium_Test_Sort");
+				*/
+		// Module Review
+				
+				/*
+				 	Log.startTestCase("Selenium_Test_Review");
+				 	
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					home.Module_LoginButton();
+					Log.info("Module_LoginButton is successful");
+					login.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
+					Log.info("Module_InputLogin is successful");
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					bar.Module_ItemSearch("PS4 Systems");
+					Log.info("Module_ItemSearch is successful");
+					search.Module_ClickItem();
+					Log.info("Module_ClickItem is successful");
+					prod.Module_Review();
+					Log.info("Module_Review is successful");
+					
+					Log.endTestCase("Selenium_Test_Review");
+				*/
+		//TC_FeedBack
+				/*
+				 	Log.startTestCase("Selenium_Test_Feedback");
+				 	
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					WebElement feedback = driver.findElement(By.id("guest_feedback_from_newegg"));
+					feedback.click();
+					Log.info("Feedback is clicked");
+					driver.switchTo().frame(1);
+					WebElement select = driver.findElement(By.className("form-select is-wide has-other-input"));
+					select.click();
+					Log.info("Select is clicked");
+					List<WebElement> options = select.findElements(By.tagName("option"));
+					
+					Log.endTestCase("Selenium_Test_Feedback");
+				*/
 	}
 }
-
