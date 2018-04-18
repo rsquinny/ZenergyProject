@@ -27,21 +27,21 @@ public class NewEgg {
 		//provide log4j configuration settings
 		DOMConfigurator.configure("log4j.xml");
 		
-		//TC_Register --- complete
-				/*
-					Log.startTestCase("Selenium_Test_Register");
-
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
-					home.Module_LoginButton();
-					Log.info("Module_LoginButton is successful");
-					login.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");
-					Log.info("Module_SignupUserName is successful");
-					login.Module_SignupPwd("Zenergy20");
-					Log.info("Module_SignupPwd is successful");
-					
-					Log.endTestCase("Selenium_Test_Register");		
-				*/	
+		//1. TC_Register --- complete
+		/*
+		Log.startTestCase("Selenium_Test_Register");
+		home.Module_GoToNewegg();
+		Log.info("Module_GoToNewegg is successful");
+		home.Module_LoginButton();
+		Log.info("Module_LoginButton is successful");
+		login.Module_Names("Ryan", "Happo");
+		Log.info("Module_Names is successful");
+		login.Module_SignupUserName("Leatherlike3Scaling@maildrop.cc");
+		Log.info("Module_SignupUserName is successful");
+		login.Module_SignupPwd("Zenergy20");
+		Log.info("Module_SignupPwd is successful");
+		Log.endTestCase("Selenium_Test_Register");
+		*/
 		//TC_Search --- complete, could add more searches just to make it special.
 				/*
 					Log.startTestCase("Selenium_Test_Search");
