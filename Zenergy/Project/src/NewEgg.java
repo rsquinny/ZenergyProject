@@ -56,21 +56,19 @@ public class NewEgg {
 		//TC_AddToWishlist --- completed
 				/*
 				 	Log.startTestCase("Selenium_Test_AddToWishlist");
-				 	
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
+
 					home.Module_LoginButton();
 					Log.info("Module_LoginButton is successful");
 					login.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
 					Log.info("Module_SignupUserName is successful");
-					home.Module_HomeButton();
-					Log.info("Module_HomeButton is successful");
 					bar.Module_ItemSearch("PS4 Systems");
 					Log.info("Module_ItemSearch is successful");
 					search.Module_ClickItem();
 					Log.info("Module_ClickItem is successful");
 					prod.Module_AddToWishList();
 					Log.info("Module_AddToWishList is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_AddToWishlist");
 				*/
