@@ -175,18 +175,22 @@ public class NewEgg {
 				*/
 		//TC_FeedBack
 				/*
+				 	
 				 	Log.startTestCase("Selenium_Test_Feedback");
 				 	
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
 					WebElement feedback = driver.findElement(By.id("guest_feedback_from_newegg"));
 					feedback.click();
 					Log.info("Feedback is clicked");
-					driver.switchTo().frame(1);
-					WebElement select = driver.findElement(By.className("form-select is-wide has-other-input"));
-					select.click();
-					Log.info("Select is clicked");
-					List<WebElement> options = select.findElements(By.tagName("option"));
+					wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='javascript:;']")));
+					Process process = Runtime.getRuntime().exec("D:\\Program Files\\eclipse\\ZenergyProject-28MarchRework\\Zenergy\\Project\\move.exe");
+					Log.info("Autoit Script to fill Feedback ran successful");
+					process.waitFor();
+					wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']")));
+					Actions act = new Actions (driver);
+					act.moveToElement(driver.findElement(By.xpath("//button[@type='button']"))).click().build().perform();
+					Log.info("Feedback is closed");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_Feedback");
 				*/
