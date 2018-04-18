@@ -193,4 +193,12 @@ public class NewEgg {
 					Log.endTestCase("Selenium_Test_Feedback");
 				*/
 	}
+		// TC_Sort --- complete
+		/*
+		home.Module_GoToNewegg();
+		bar.Module_ItemSearch("PS4 Systems");
+		search.Module_SortByLowest();
+		*/	
+		
+	
 }
