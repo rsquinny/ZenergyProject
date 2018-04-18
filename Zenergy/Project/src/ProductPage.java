@@ -90,6 +90,19 @@ public class ProductPage {
 		act.moveToElement(driver.findElement(By.xpath("//span[@class='form-checkbox-title'][contains(text(),'Wishlist1')]"))).click().build().perform();
 		driver.findElement(By.xpath("//button[@type='button'][contains(text(),'ADD')]")).click();
 		Log.info("Item added on wishlist");
+		Thread.sleep(1500);
+		act.moveToElement(driver.findElement(By.xpath("//a[@href='javascript:void(0)'][contains(text(),'View My Wish Lists')]"))).click().build().perform();
+		Log.info("View my wish list is clicked");
+		try {
+			if (driver.findElement(By.xpath("//h1[@class='page-title-text']")).isDisplayed()) {
+				Log.info("WishList page is displayed");
+			}
+			if (!driver.findElement(By.xpath("//h1[@class='page-title-text']")).isDisplayed()) {
+				Log.error("WishList page is not displayed");
+			}
+		}catch (Exception e) {
+			Thread.sleep(2000);
+		}
 		
 		Log.endModule("Selenium_Module_AddToWishList");
 	}
