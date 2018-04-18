@@ -104,4 +104,11 @@ public class SearchPage {
 		
 		Log.endModule("Selenium_Module_ClickItem");
 	}
+	//Module_SortByLowest
+	public void Module_SortByLowest() {
+		WebElement sort = driver.findElement(By.id("Order_top"));
+		sort.click();
+		WebElement lowprice = driver.findElement(By.xpath("//*[@id=\"Order_top\"]/option[2]"));
+		lowprice.click();
+	}
 }
