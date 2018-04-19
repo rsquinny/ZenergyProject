@@ -29,27 +29,32 @@ public class NewEgg {
 		
 		//1. TC_Register --- complete
 		/*
-		Log.startTestCase("Selenium_Test_Register");
-		home.Module_GoToNewegg();
-		Log.info("Module_GoToNewegg is successful");
-		home.Module_LoginButton();
-		Log.info("Module_LoginButton is successful");
-		login.Module_Names("Ryan", "Happo");
-		Log.info("Module_Names is successful");
-		login.Module_SignupUserName("Leatherlike3Scaling@maildrop.cc");
-		Log.info("Module_SignupUserName is successful");
-		login.Module_SignupPwd("Zenergy20");
-		Log.info("Module_SignupPwd is successful");
-		Log.endTestCase("Selenium_Test_Register");
+					Log.startTestCase("Selenium_Test_Register");
+					
+					home.Module_GoToNewegg();
+					Log.info("Module_GoToNewegg is successful");
+					home.Module_LoginButton();
+					Log.info("Module_LoginButton is successful");
+					login.Module_Names("Ryan", "Happo");
+					Log.info("Module_Names is successful");
+					login.Module_SignupUserName("Leatherlike3Scaling@maildrop.cc");
+					Log.info("Module_SignupUserName is successful");
+					login.Module_SignupPwd("Zenergy20");
+					Log.info("Module_SignupPwd is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
+					
+					Log.endTestCase("Selenium_Test_Register");
 		*/
 		//TC_Search --- complete, could add more searches just to make it special.
 				/*
 					Log.startTestCase("Selenium_Test_Search");
 					
-					home.Module_GoToNewegg();
 					Log.info("Module_GoToNewegg is successful");
 					bar.Module_ItemSearch("laptop");
 					Log.info("Module_ItemSearch is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_Search");
 				*/
@@ -77,10 +82,12 @@ public class NewEgg {
 				/*
 				 	Log.startTestCase("Selenium_Test_PromoCode");
 				 	
-					home.Module_GoToNewegg();
+					
 					Log.info("Module_Go_ToNewegg is successful");
 					login.Module_SignupUserName("LeatherlikeScaling@maildrop.cc");
 					Log.info("Module_SignupUserName is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_PromoCode");
 				*/
@@ -88,12 +95,12 @@ public class NewEgg {
 				/*
 				 	Log.startTestCase("Selenium_Test_Compare");
 		
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
 					bar.Module_ItemSearch("laptop");
 					Log.info("Module_ItemSearch is successful");
 					search.Module_Compare();
 					Log.info("Module_Compare is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_Compare");
 		 		*/
@@ -101,10 +108,11 @@ public class NewEgg {
 				/*
 				 	Log.startTestCase("Selenium_Test_FeaturedSellers");
 				 	
-					home.Module_GoToNewegg();
 					Log.info("Module_GoToNewegg is successful");
 					search.Module_FeaturedSellers();
 					Log.info("Module_FeaturedSellers is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_FeaturedSellers");
 		 		*/	
@@ -112,8 +120,6 @@ public class NewEgg {
 				/*
 					Log.startTestCase("Selenium_Test_Checkout");
 					
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
 					bar.Module_ItemSearch("laptop");
 					Log.info("Module_ItemSearch is successful");
 					prod.Module_Cart();
@@ -134,6 +140,8 @@ public class NewEgg {
 					Log.info("Module_Checkout is successful");
 					prod.Module_CheckoutasGuest();
 					Log.info("Module_CheckoutasGuest is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_Checkout");
 				*/
@@ -142,12 +150,12 @@ public class NewEgg {
 				/*
 				 	Log.startTestCase("Selenium_Test_Sort");
 				 	
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
 					bar.Module_ItemSearch("PS4 Systems");
 					Log.info("Module_ItemSearch is successful");
 					search.Module_SortByLowest();
 					Log.info("Module_SortByLowest is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_Sort");
 				*/
@@ -155,9 +163,7 @@ public class NewEgg {
 				
 				/*
 				 	Log.startTestCase("Selenium_Test_Review");
-				 	
-					home.Module_GoToNewegg();
-					Log.info("Module_GoToNewegg is successful");
+
 					home.Module_LoginButton();
 					Log.info("Module_LoginButton is successful");
 					login.Module_InputLogin("LeatherlikeScaling@maildrop.cc", "Zenergy20");
@@ -170,6 +176,8 @@ public class NewEgg {
 					Log.info("Module_ClickItem is successful");
 					prod.Module_Review();
 					Log.info("Module_Review is successful");
+					home.Module_HomeButton();
+					Log.info("Module_HomeButton is successful");
 					
 					Log.endTestCase("Selenium_Test_Review");
 				*/
@@ -196,11 +204,16 @@ public class NewEgg {
 				*/
 	}
 		// TC_Sort --- complete
-		/*
-		home.Module_GoToNewegg();
-		bar.Module_ItemSearch("PS4 Systems");
-		search.Module_SortByLowest();
-		*/	
+				/*
+					Log.startTestCase("Selenium_Test_Sort");
+					
+					bar.Module_ItemSearch("PS4 Systems");
+					Log.info("Module_ItemSearch is successful");
+					search.Module_SortByLowest();
+					Log.info("Module_SortByLowest is successful");
+					
+					Log.endTestCase("Selenium_Test_Sort");
+				*/	
 		
 	
 }
