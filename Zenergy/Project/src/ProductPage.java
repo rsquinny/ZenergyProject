@@ -136,9 +136,20 @@ public class ProductPage {
 			
 			Log.startModule("Selenium_Module_Review");
 			
-			WebElement WriteAReview = driver.findElement(By.xpath("//div[@class='text-wrap']//a[@data-t-events='A']"));
-			WriteAReview.click();
-			Log.info("Write a Review button is clicked");
+			try {
+				if (driver.findElement(By.xpath("//a[@class='first_review']")).isDisplayed()) {
+					driver.findElement(By.xpath("//a[@class='first_review']")).click();
+					Log.info("Write a Review button is clicked");
+				}
+				if (driver.findElement(By.xpath("//a[@class='atnIcon icnWrite']")).isDisplayed()) {
+					driver.findElement(By.xpath("//a[@class='atnIcon icnWrite']")).click();
+					Log.info("Write a Review button is clicked");
+				}
+				
+			}catch (Exception e){
+				
+			}
+	
 			Thread.sleep(2000);
 			WebElement AddTitle = driver.findElement(By.id("addTitle"));
 			AddTitle.click();
