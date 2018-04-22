@@ -184,19 +184,27 @@ public class NewEgg {
 		//TC_FeedBack
 				/*
 				 	
-				 	Log.startTestCase("Selenium_Test_Feedback");
 				 	
+				 	Log.startTestCase("Selenium_Test_Feedback");
+				 	home.Module_GoToNewegg();
 					WebElement feedback = driver.findElement(By.id("guest_feedback_from_newegg"));
 					feedback.click();
 					Log.info("Feedback is clicked");
-					wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='javascript:;']")));
-					Process process = Runtime.getRuntime().exec("D:\\Program Files\\eclipse\\ZenergyProject-28MarchRework\\Zenergy\\Project\\move.exe");
-					Log.info("Autoit Script to fill Feedback ran successful");
-					process.waitFor();
-					wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='button']")));
-					Actions act = new Actions (driver);
-					act.moveToElement(driver.findElement(By.xpath("//button[@type='button']"))).click().build().perform();
-					Log.info("Feedback is closed");
+					Thread.sleep(2500);
+					try {
+						if (driver.findElement(By.xpath("//a[@href='javascript:;']")).isDisplayed()) {
+							driver.findElement(By.xpath("//a[@href='javascript:;']")).click();
+							Log.info("Feedback is closed");
+						}
+						if (driver.findElement(By.xpath("//a[@href='javascript:;']")).isDisplayed()) {
+							driver.findElement(By.xpath("//a[@href='javascript:;']")).click();
+							Log.error("Feedback is not closed and not detected");
+						}
+						
+					}catch (Exception e){
+						
+					}
+
 					home.Module_HomeButton();
 					Log.info("Module_HomeButton is successful");
 					
